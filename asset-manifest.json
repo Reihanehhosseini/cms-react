@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cms-react/static/css/main.4dfb2efa.css",
+    "main.js": "/cms-react/static/js/main.a7751eb6.js",
+    "static/js/453.6d4a2d1d.chunk.js": "/cms-react/static/js/453.6d4a2d1d.chunk.js",
+    "static/media/Lalezar-Regular.ttf": "/cms-react/static/media/Lalezar-Regular.4cbab4c9f26cf13014c6.ttf",
+    "index.html": "/cms-react/index.html",
+    "main.4dfb2efa.css.map": "/cms-react/static/css/main.4dfb2efa.css.map",
+    "main.a7751eb6.js.map": "/cms-react/static/js/main.a7751eb6.js.map",
+    "453.6d4a2d1d.chunk.js.map": "/cms-react/static/js/453.6d4a2d1d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4dfb2efa.css",
+    "static/js/main.a7751eb6.js"
+  ]
+}
