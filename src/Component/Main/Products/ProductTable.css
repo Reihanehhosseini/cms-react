@@ -1,0 +1,38 @@
+
+.product-table{
+    background-color: var(--white);
+    margin-top: 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 30px;
+}
+.product-table table{
+    width: 100%;
+    color: var(--black);
+}
+.product-table tr{
+    text-align: center !important;
+}
+
+.btn-table{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.btn-table button{
+    background-color: var(--blue);
+    border: 2px solid var(--border);
+    color: var(--border);
+    padding: 5px 17px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+}
+

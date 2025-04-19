@@ -1,0 +1,82 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-right img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+.header-right div:first-child {
+  font-size: 20px;
+  padding-bottom: 5px;
+  color: var(--black);
+}
+.header-right div:last-child {
+  font-size: 15px;
+  color: rgb(105, 101, 101);
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.searchbox {
+  background-color: var(--white);
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  box-shadow: 5px 5px 17px -10px rgba(0,0,0,0.75);
+}
+.searchbox input {
+  border: none;
+  padding-right: 15px;
+  padding-left: 50px;
+  color: var(--black);
+  outline: none;
+  background-color: var(--white);
+}
+.searchbox button {
+  border: 2px solid var(--border);
+  background-color: var(--blue);
+  color: var(--border);
+  padding: 5px 17px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.header-left-icons {
+  margin-right: 15px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: var(--blue);
+}
+.header-left-icons svg {
+  stroke: var(--border);
+  fill: var(--border);
+}

@@ -1,0 +1,22 @@
+.HomeDataBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.home-box {
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}

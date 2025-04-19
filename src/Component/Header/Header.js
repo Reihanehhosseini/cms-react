@@ -1,0 +1,41 @@
+import "./Header.css";
+import { CiBellOn } from "react-icons/ci";
+import { BsBrightnessHigh } from "react-icons/bs";
+
+import React, { useEffect, useState } from "react";
+
+export default function Header() {
+  const [ darkMode , setDarkMode]= useState(false)
+  useEffect(()=>{
+    const root = document.documentElement;
+    if(darkMode){
+      root.classList.add("dark-theme")
+    }else{
+      root.classList.remove("dark-theme")
+    }
+  },[darkMode])
+
+  return (
+    <div className="header">
+      <div className="header-right">
+        <img src="./Untitled.jpg" alt="" />
+        <div>
+          <div>ریحانه حسینی</div>
+          <div>برنامه نویس فرانت اند</div>
+        </div>
+      </div>
+      <div className="header-left">
+        <div className="searchbox">
+          <input type="text" placeholder="جست و جو کنید ..." />
+          <button>جست و جو</button>
+        </div>
+        <div className="header-left-icons">
+          <CiBellOn />
+        </div>
+        <div className="header-left-icons">
+          <BsBrightnessHigh style={{cursor:"pointer"}} onClick={()=>{setDarkMode(prev => !prev)}}/>
+        </div>
+      </div>
+    </div>
+  );
+}

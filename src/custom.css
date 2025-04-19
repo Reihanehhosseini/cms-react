@@ -1,0 +1,37 @@
+@import "./reset.css";
+
+@font-face {
+  font-family: "Lalezar";
+  src: url("../public/Lalezar-Regular.ttf");
+}
+
+:root {
+  --white: #ffff;
+  --white-50: #f0f0f0;
+  --blue: #471aaa;
+  --active: #1b0a56;
+  --black : #000;
+  --atag: #fff;
+  --border: #000;
+}
+.dark-theme {
+  --white-50: rgb(40, 39, 40);
+  --blue: #30254a;
+  --white: #221c1c;
+  --active: rgb(40, 39, 40);
+  --black : #f0f0f0;
+  --atag:#bfb0f4;
+  --border: #bfb0f4;
+}
+body {
+  background-color: var(--white-50);
+  direction: rtl;
+  height: 100vh;
+  overflow: hidden;
+}
+
+*,
+body,
+html {
+  font-family: Lalezar;
+}
