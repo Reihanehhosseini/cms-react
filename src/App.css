@@ -22,3 +22,9 @@
     }
     
 }
+@media screen and (max-width:576px) {
+    .main{
+        padding: 20px 140px 20px 20px;
+    }
+    
+}
