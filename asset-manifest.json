@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/cms-react/static/css/main.fa0353fc.css",
+    "main.css": "/cms-react/static/css/main.dfbfd396.css",
     "main.js": "/cms-react/static/js/main.81cfdae7.js",
     "static/js/453.6d4a2d1d.chunk.js": "/cms-react/static/js/453.6d4a2d1d.chunk.js",
     "static/media/Lalezar-Regular.ttf": "/cms-react/static/media/Lalezar-Regular.4cbab4c9f26cf13014c6.ttf",
     "index.html": "/cms-react/index.html",
-    "main.fa0353fc.css.map": "/cms-react/static/css/main.fa0353fc.css.map",
+    "main.dfbfd396.css.map": "/cms-react/static/css/main.dfbfd396.css.map",
     "main.81cfdae7.js.map": "/cms-react/static/js/main.81cfdae7.js.map",
     "453.6d4a2d1d.chunk.js.map": "/cms-react/static/js/453.6d4a2d1d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa0353fc.css",
+    "static/css/main.dfbfd396.css",
     "static/js/main.81cfdae7.js"
   ]
 }
