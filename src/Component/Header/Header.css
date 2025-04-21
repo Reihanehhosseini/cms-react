@@ -171,3 +171,15 @@
     gap: 5px;
   }
 }
+@media screen and (max-width:480px) {
+  .header-right div:first-child {
+    font-size: 11px;
+  }
+  .header-right div:last-child {
+    font-size: 7px;
+  }
+  .header-left-icons{
+    margin-right: 0;
+  }
+  
+}

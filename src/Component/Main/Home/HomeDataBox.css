@@ -50,3 +50,16 @@
     height: 85px;
   }
 }
+@media screen and (max-width:480px) {
+  .home-box{
+    width: 120px;
+    height: 70px;
+  }
+  
+}
+/* @media screen and (max-width:430px){
+  .home-box{
+    width: 100px;
+    height: 50px;
+  }
+} */
