@@ -5,3 +5,15 @@
     font-size: 30px;
     color: var(--black);
 }
+@media screen and (max-width:1115px) {
+    .home-title{
+        font-size: 20px;
+    }
+    
+    @media screen and (max-width:575px) {
+        .home-title{
+            font-size: 17px;
+        }
+        
+    }
+}

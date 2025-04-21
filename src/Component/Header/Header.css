@@ -1,5 +1,5 @@
 .header {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,7 +41,8 @@
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   display: flex;
-  box-shadow: 5px 5px 17px -10px rgba(0,0,0,0.75);
+  align-items: center;
+  box-shadow: 5px 5px 17px -10px rgba(0, 0, 0, 0.75);
 }
 .searchbox input {
   border: none;
@@ -54,7 +55,7 @@
 .searchbox button {
   border: 2px solid var(--border);
   background-color: var(--blue);
-  color: var(--border);
+  color: var(--white);
   padding: 5px 17px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -77,6 +78,96 @@
   background-color: var(--blue);
 }
 .header-left-icons svg {
+  stroke: var(--atag);
+  fill: var(--atag);
+}
+.mobile-size-serachIcon{
+  display: none;
   stroke: var(--border);
   fill: var(--border);
+
+}
+@media screen and (max-width: 1115px) {
+  .searchbox {
+    padding: 5px 2px;
+  }
+  .searchbox input {
+    padding-left: 0px;
+    font-size: 10px;
+  }
+  .searchbox button {
+    padding: 5px;
+    font-size: 10px;
+  }
+  .header-left-icons {
+    padding: 5px;
+  }
+  .header-right div:first-child {
+    font-size: 15px;
+  }
+  .header-right div:last-child {
+    font-size: 10px;
+  }
+  .header-right img {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .searchbox button {
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .searchbox input {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .header-left-icons {
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+}
+@media screen and (max-width: 768px) {
+  .searchbox {
+    padding: 5px 0;
+  }
+  .searchbox input {
+    padding-right: 5px;
+    font-size: 9px;
+  }
+}
+@media screen and (max-width:575px){
+  .header-right div:first-child {
+    font-size: 13px;
+  }
+  .header-right div:last-child {
+    font-size: 9px;
+  }
+  .mobile-size-serachIcon{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
+  }
+  .desktop-size-searchbtn{
+    display: none;
+  }
+  .searchbox input{
+    width: 70px;
+    font-size: 9px;
+  }
+  .header-right{
+    gap: 5px;
+  }
 }

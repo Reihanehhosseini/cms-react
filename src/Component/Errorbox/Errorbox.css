@@ -8,3 +8,14 @@
     color: var(--white);
     font-size: 25px;
 }
+@media screen and (max-width:860px) {
+    .errorbox{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:576px) {
+    .errorbox{
+        font-size: 14px;
+    }
+    
+}

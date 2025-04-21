@@ -10,3 +10,39 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+.xchart{
+    font-size: 17px;
+}
+.ychart{
+    font-size: 17px;
+}
+@media screen and (max-width:860px) {
+    .xchart{
+        font-size: 14px;
+    }
+    .ychart{
+        font-size: 14px;
+    }
+    .charthome{
+        padding: 10px;
+    }
+    
+}
+@media screen and (max-width:576px) {
+    .xchart{
+        font-size: 11px;
+    }
+    .ychart{
+        font-size: 11px;
+    }
+    
+}
+@media screen and (max-width:480px) {
+    .xchart{
+        font-size: 10px;
+    }
+    .ychart{
+        font-size: 8px;
+    }
+    
+}

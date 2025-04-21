@@ -1,38 +1,70 @@
-
-.product-table{
-    background-color: var(--white);
-    margin-top: 40px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    padding: 30px;
+.product-table {
+  background-color: var(--white);
+  margin-top: 40px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 30px;
 }
-.product-table table{
-    width: 100%;
-    color: var(--black);
+.product-table table {
+  width: 100%;
+  color: var(--black);
 }
-.product-table tr{
-    text-align: center !important;
-}
-
-.btn-table{
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-}
-.btn-table button{
-    background-color: var(--blue);
-    border: 2px solid var(--border);
-    color: var(--border);
-    padding: 5px 17px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    cursor: pointer;
+.product-table tr {
+  text-align: center !important;
 }
 
+.btn-table {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.btn-table button {
+  background-color: var(--blue);
+  border: 2px solid var(--border);
+  color: var(--atag);
+  padding: 5px 17px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+@media screen and (max-width: 1115px) {
+  .product-table tr {
+    font-size: 13px;
+  }
+  .product-table table img {
+    width: 55px;
+    height: 55px;
+  }
+  .btn-table button {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .product-table {
+    padding: 30px 10px;
+  }
+  .btn-table {
+    gap: 10px;
+  }
+  .product-table tr {
+    font-size: 11px;
+  }
+  .btn-table {
+    font-size: 10px;
+  }
+  .btn-table button {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 1px solid var(--border);
+  }
+}

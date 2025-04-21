@@ -1,35 +1,43 @@
-.Aside{
-    position: fixed;
-    background-color: var(--blue);
-    height: 100vh;
-    width: 200px;
-    color: var(--atag);
-    width: 200px;
+.Aside {
+  position: fixed;
+  background-color: var(--blue);
+  height: 100vh;
+  width: 200px;
+  color: var(--atag);
 }
-.aside-dash{
-    border-bottom: 1px solid rgb(144, 138, 138);
-    padding: 15px 10px;
+.aside-dash {
+  border-bottom: 1px solid rgb(144, 138, 138);
+  padding: 15px 10px;
 }
-.aside-list{
-    padding-top: 30px;
+.aside-list {
+  padding-top: 30px;
 }
-.aside-list li{
-    margin-bottom: 10px;
+.aside-list li {
+  margin-bottom: 10px;
 }
-.aside-list li:first-child{
-    margin-bottom: 25px;
+.aside-list li:first-child {
+  margin-bottom: 25px;
 }
-.aside-list li a{
-    text-decoration: none;
-    list-style-type: none;
-    color: var(--atag);
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 10px;
-   
+.aside-list li a {
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--atag);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px;
 }
-
-.active{
-    background-color:var(--active); 
+.active {
+  background-color: var(--active);
+}
+@media screen and (max-width: 1115px) {
+  .Aside {
+    width: 150px;
+  }
+  .aside-dash {
+    font-size: 13px;
+  }
+  .aside-list li a {
+    font-size: 12px;
+  }
 }

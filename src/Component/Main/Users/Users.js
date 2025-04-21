@@ -11,6 +11,7 @@ export default function Users() {
   const [deleteModal, setDeleteModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [detailModal, setDetailModal] = useState(false);
+  const [action, setAction] = useState(false);
   const [detail, setDetail] = useState({});
 
   const [userId, setUserId] = useState(null);
@@ -46,10 +47,14 @@ export default function Users() {
   };
 
   const cancelModal = () => {
-    setDeleteModal(false);
-    setEditModal(false);
-    setDetailModal(false);
+    setAction(false)
   };
+  const clickBody = ()=>{
+    setDeleteModal(false);
+    setDetailModal(false);
+    setEditModal(false);
+    setAction(false);
+  }
   const edituser = () => {
     let newUser = {
       firsname: newFirstName,
@@ -75,6 +80,7 @@ export default function Users() {
       .then((data) => {
         setEditModal(false);
         getAllUsers();
+        setAction(false);
       });
   };
 
@@ -102,8 +108,9 @@ export default function Users() {
                   <td>{user.password}</td>
                   <td>{user.phone}</td>
                   <td>{user.email}</td>
-                  <td className="btn-table">
+                  <td className="btn-table btn-button-table">
                     <button
+                      className="desktop-size-action"
                       onClick={() => {
                         setDeleteModal(true);
                         setUserId(user.id);
@@ -112,6 +119,7 @@ export default function Users() {
                       حذف
                     </button>
                     <button
+                      className="desktop-size-action"
                       onClick={() => {
                         setEditModal(true);
                         setUserId(user.id);
@@ -130,12 +138,33 @@ export default function Users() {
                       ویرایش
                     </button>
                     <button
+                      className="desktop-size-action"
                       onClick={() => {
                         setDetailModal(true);
                         setDetail(user);
                       }}
                     >
                       جزئیات
+                    </button>
+                    <button
+                      className="mobile-size-action"
+                      onClick={() => {
+                        setAction(true);
+                        setUserId(user.id);
+                        setDetail(user)
+                        setNewFirstName(user.firsname);
+                        setNewLastName(user.lastname);
+                        setNewUserName(user.username);
+                        setNewPassword(user.password);
+                        setNewPhone(user.phone);
+                        setNewCity(user.city);
+                        setNewAddress(user.address);
+                        setNewBuy(user.buy);
+                        setNewEmail(user.email);
+                        setNewScore(user.score);
+                      }}
+                    >
+                      اقدامات
                     </button>
                   </td>
                 </tr>
@@ -149,7 +178,7 @@ export default function Users() {
       {deleteModal && (
         <Modal
           title="آیا از حذف اطمینان دارید؟"
-          cancelModal={cancelModal}
+          cancelModal={clickBody}
           submitModal={submitDeleteModal}
         />
       )}
@@ -248,27 +277,36 @@ export default function Users() {
         </Edit>
       )}
       {detailModal && (
+        <Detail clickBody={clickBody}>
+          <table>
+            <thead>
+              <tr>
+                <th>شهر</th>
+                <th>آدرس</th>
+                <th>امتیاز</th>
+                <th>میزان خرید</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{detail.city}</td>
+                <td>{detail.address}</td>
+                <td>{detail.score}</td>
+                <td>{detail.buy.toLocaleString()}ریال</td>
+              </tr>
+            </tbody>
+          </table>
+        </Detail>
+      )}
+      {action && (
         <Detail clickBody={cancelModal}>
-          
-            <table>
-              <thead >
-                <tr>
-                  <th>شهر</th>
-                  <th>آدرس</th>
-                  <th>امتیاز</th>
-                  <th>میزان خرید</th>
-                </tr>
-              </thead>
-              <tbody >
-                <tr>
-                  <td>{detail.city}</td>
-                  <td>{detail.address}</td>
-                  <td>{detail.score}</td>
-                  <td>{detail.buy.toLocaleString()}ریال</td>
-                </tr>
-              </tbody>
-            </table>
-        
+          <>
+            <div className="btn-table">
+              <button onClick={() => setDeleteModal(true)}>حذف</button>
+              <button onClick={() => setEditModal(true)}>ویرایش</button>
+              <button onClick={() => setDetailModal(true)}>جزئیات</button>
+            </div>
+          </>
         </Detail>
       )}
     </div>

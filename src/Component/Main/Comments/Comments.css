@@ -24,7 +24,7 @@ padding: 15px;
 .btn-button{
     background-color: var(--blue);
     border: 2px solid var(--border);
-    color: var(--border);
+    color: var(--atag);
     padding: 5px 17px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -32,4 +32,79 @@ padding: 15px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     cursor: pointer;
+}
+.mobile-size-action{
+    display: none;
+}
+@media screen and (max-width:1170px) {
+
+    .btn-button{
+        font-size: 11px;
+        /* padding: 5px 10px; */
+    }
+    .comment-box table tr{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:1126px) {
+    .btn-button-table{
+        gap: 10px;
+    }
+    
+}
+@media screen and (max-width:960px) {
+    .btn-button{
+        font-size: 10px;
+        padding: 5px;
+}
+    .comment-box table td{
+        padding: 5px;
+        font-size: 10px;
+    }
+    .comment-box table th{
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+}
+@media screen and (max-width:860px) {
+    .btn-button {
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border: 1px solid var(--border);
+    }
+    
+}
+@media screen and (max-width:713px) {
+    .btn-table{
+        gap: 5px;
+    }
+    .mobile-size-action{
+        display: block;
+    }
+    .desktop-size-action{
+        display: none;
+    }
+}
+@media screen and (max-width:575px) {
+    .comment-box table td{
+        padding: 5px 1px;
+        font-size: 8px;
+    }
+    .comment-box table th{
+        padding: 5px 1px;
+        font-size: 8px;
+    }
+    .btn-button{
+        padding: 5px 2px;
+        font-size: 8px;
+    }
+    .btn-button-table button{
+        padding: 5px 2px;
+        font-size: 8px;
+    }
+    
 }

@@ -41,7 +41,7 @@
 .addproduct-btn{
     border: 2px solid var(--border);
     background-color: var(--blue);
-    color: var(--border);
+    color: var(--atag);
     border-radius: 10px;
     padding: 5px 17px;
     -webkit-border-radius: 10px;
@@ -49,4 +49,33 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     cursor: pointer;
+}
+@media screen and (max-width:1115px) {
+    .addproduct h1{
+        font-size: 20px;
+    }
+    .addproduct-btn{
+        font-size: 10px;
+    }
+    .form-section input::placeholder{
+        font-size: 10px;
+    }
+    
+}
+@media screen and (max-width:860px) {
+    .addproduct-btn{
+        font-size: 8px;
+    }
+    
+}
+@media screen and (max-width:660px) {
+    .addproduct-form{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:575px) {
+    
+    
 }

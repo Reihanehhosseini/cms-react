@@ -40,3 +40,58 @@
 .users-box-detail table td, .users-box-detail table th{
     padding: 15px;
 }
+
+@media screen and (max-width:1237px) {
+    .users-box table td{
+        padding: 5px;
+        font-size: 15px;
+    }
+    .users-box table th{
+        padding: 5px;
+        font-size: 15px;
+    }
+    
+}
+@media screen and (max-width:937px) {
+    .users-box table td{
+        padding: 4px;
+        font-size: 14px;
+    }
+    .users-box table th{
+        padding: 2px;
+        font-size: 14px;
+    }
+    
+}
+@media screen and (max-width:893px) {
+    .users-box table td{
+        padding: 5px;
+        font-size: 10px;
+    }
+    .users-box table th{
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+}
+@media screen and (max-width:575px) {
+    .users-box table td{
+        padding: 5px 1px;
+        font-size: 8px;
+    }
+    .users-box table th{
+        padding: 5px 1px;
+        font-size: 8px;
+    }
+    .btn-button{
+        padding: 5px 2px;
+        font-size: 8px;
+    }
+    .btn-button-table button{
+        padding: 5px 2px;
+        font-size: 8px;
+    }
+    
+}
+
+

@@ -3,18 +3,18 @@ import "./Edit.css";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 
-export default function Edit({ children, submitHandler, clickBody }) {
+export default function Edit({ children, submitHandler }) {
 
-  useEffect(() => {
-    const KeypressHandler = (event) => {
-      if (event.keyCode === 27) {
-        clickBody();
-      }
-    };
+  // useEffect(() => {
+  //   const KeypressHandler = (event) => {
+  //     if (event.keyCode === 27) {
+  //       clickBody();
+  //     }
+  //   };
 
-    window.addEventListener("keydown", KeypressHandler);
-    return ()=> window.removeEventListener("keydown", KeypressHandler)
-  });
+  //   window.addEventListener("keydown", KeypressHandler);
+  //   return ()=> window.removeEventListener("keydown", KeypressHandler)
+  // });
 
   return ReactDOM.createPortal(
     <div className="modal-section">

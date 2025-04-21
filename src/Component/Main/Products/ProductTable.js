@@ -5,11 +5,13 @@ import Detail from "../../Modal/Detail";
 import { AiOutlineDollar } from "react-icons/ai";
 import Edit from "../../Modal/Edit";
 import Errorbox from "../../Errorbox/Errorbox";
+import { click } from "@testing-library/user-event/dist/click";
 
 export default function ProductTable({ allProducts, getAllProducts }) {
   const [deletModal, setDeleteModal] = useState(false);
   const [detailModal, setDetailModal] = useState(false);
   const [editlModal, setEditModal] = useState(false);
+  const [action, setAction] = useState(false);
 
   const [productID, setProductID] = useState(null);
   const [detail, setDetail] = useState({});
@@ -31,9 +33,10 @@ export default function ProductTable({ allProducts, getAllProducts }) {
     });
   };
   const cancelModal = () => {
-    setDeleteModal(false);
+    setAction(false)
   };
   const clickBody = () => {
+    setDeleteModal(false);
     setDetailModal(false);
     setEditModal(false);
   };
@@ -60,6 +63,7 @@ export default function ProductTable({ allProducts, getAllProducts }) {
       .then((res) => res.json())
       .then((data) => getAllProducts());
     setEditModal(false);
+    setAction(false)
   };
 
   return (
@@ -88,6 +92,7 @@ export default function ProductTable({ allProducts, getAllProducts }) {
                     <td>{product.count}</td>
                     <td className="btn-table">
                       <button
+                        className="desktop-size-action"
                         onClick={() => {
                           setDeleteModal(true);
                           setProductID(product.id);
@@ -96,6 +101,7 @@ export default function ProductTable({ allProducts, getAllProducts }) {
                         حذف
                       </button>
                       <button
+                        className="desktop-size-action"
                         onClick={() => {
                           setEditModal(true);
                           setDetail(product);
@@ -112,12 +118,31 @@ export default function ProductTable({ allProducts, getAllProducts }) {
                         ویرایش
                       </button>
                       <button
+                        className="desktop-size-action"
                         onClick={() => {
                           setDetailModal(true);
                           setDetail(product);
                         }}
                       >
                         جزئیات
+                      </button>
+                      <button
+                        className="mobile-size-action"
+                        onClick={() => {
+                          setAction(true);
+                          setProductID(product.id);
+                          setNewProductTitle(product.title);
+                          setNewProductPrice(product.price);
+                          setNewProductCount(product.count);
+                          setNewProductImg(product.img);
+                          setNewProductPopularity(product.popularity);
+                          setNewProductSale(product.sale);
+                          setNewProductColors(product.colors);
+                          setProductID(product.id);
+                          setDetail(product)
+                        }}
+                      >
+                        اقدامات
                       </button>
                     </td>
                   </tr>
@@ -133,7 +158,7 @@ export default function ProductTable({ allProducts, getAllProducts }) {
         <Modal
           title="یا از حذف اطمینان دارید؟"
           submitModal={submitModal}
-          cancelModal={cancelModal}
+          cancelModal={clickBody}
         />
       )}
       {detailModal && (
@@ -238,6 +263,15 @@ export default function ProductTable({ allProducts, getAllProducts }) {
             </div>
           </div>
         </Edit>
+      )}
+      {action && (
+        <Detail clickBody={cancelModal}>
+          <div className="btn-table">
+            <button onClick={() => setDeleteModal(true)}>حذف</button>
+            <button onClick={() => setEditModal(true)}>ویرایش</button>
+            <button onClick={()=> setDetailModal(true)}>جزئیات</button>
+          </div>
+        </Detail>
       )}
     </>
   );

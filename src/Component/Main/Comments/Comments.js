@@ -12,9 +12,11 @@ export default function Comments() {
   const [editModal, setEditModal] = useState(false);
   const [acceptModal, setAcceptModal] = useState(false);
   const [rejectModal, setRejectModal] = useState(false);
+  const [action, setAction] = useState(false);
   const [edit, setEdit] = useState(null);
   const [detail, setdetail] = useState(null);
   const [commentId, setCommentId] = useState(null);
+  const [commentAccept, setCommentAccept] = useState(null);
 
   useEffect(() => {
     getAllComments();
@@ -44,6 +46,7 @@ export default function Comments() {
   const clickBody = () => {
     setDetailModal(false);
     setEditModal(false);
+    setAction(false);
   };
 
   const cancelModal = () => {
@@ -70,9 +73,10 @@ export default function Comments() {
     }).then((res) => {
       getAllComments();
       setEditModal(false);
+      setAction(false);
     });
   };
-  const acceptModalHandler = () => {
+  const acceptHandler = () => {
     setAcceptModal(false);
     fetch(`http://localhost:8000/api/comments/accept/${commentId}`, {
       method: "POST",
@@ -114,8 +118,9 @@ export default function Comments() {
                   </td>
                   <td>{comment.date}</td>
                   <td>{comment.hour}</td>
-                  <td className="btn-table">
+                  <td className="btn-table btn-button-table">
                     <button
+                      className="desktop-size-action"
                       onClick={() => {
                         setDeleteModal(true);
                         setCommentId(comment.id);
@@ -124,6 +129,7 @@ export default function Comments() {
                       حذف
                     </button>
                     <button
+                      className="desktop-size-action"
                       onClick={() => {
                         setEditModal(true);
                         setEdit(comment.body);
@@ -132,9 +138,10 @@ export default function Comments() {
                     >
                       ویرایش
                     </button>
-                    <button>پاسخ</button>
+                    <button className="desktop-size-action">پاسخ</button>
                     {comment.isAccept === 0 ? (
                       <button
+                        className="desktop-size-action"
                         onClick={() => {
                           setAcceptModal(true);
                           setCommentId(comment.id);
@@ -144,6 +151,7 @@ export default function Comments() {
                       </button>
                     ) : (
                       <button
+                        className="desktop-size-action"
                         onClick={() => {
                           setRejectModal(true);
                           setCommentId(comment.id);
@@ -152,6 +160,17 @@ export default function Comments() {
                         رد کامنت
                       </button>
                     )}
+                    <button
+                      className="mobile-size-action"
+                      onClick={() => {
+                        setAction(true);
+                        setCommentId(comment.id);
+                        setEdit(comment.body);
+                        setCommentAccept(comment.isAccept);
+                      }}
+                    >
+                      اقدامات
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -187,7 +206,7 @@ export default function Comments() {
         />
       )}
       {editModal && (
-        <Edit submitHandler={submitHandler} clickBody={clickBody}>
+        <Edit submitHandler={submitHandler}>
           <textarea
             name=""
             id=""
@@ -202,7 +221,7 @@ export default function Comments() {
         <Modal
           title="آیا از تایید اطمینان دارید؟"
           cancelModal={cancelModalHandler}
-          submitModal={acceptModalHandler}
+          submitModal={acceptHandler}
         />
       )}
       {rejectModal && (
@@ -211,6 +230,24 @@ export default function Comments() {
           cancelModal={cancelModalHandler}
           submitModal={rejectHandler}
         />
+      )}
+      {action && (
+        <Detail clickBody={clickBody}>
+          <>
+            <div className="btn-table">
+              <button onClick={() => setDeleteModal(true)}>حذف</button>
+              <button onClick={() => setEditModal(true)}>ویرایش</button>
+              <button>پاسخ</button>
+              {commentAccept === 0 ? (
+                <button
+                onClick={acceptHandler}
+                >تایید</button>
+              ) : (
+                <button onClick={rejectHandler}>رد کامنت </button>
+              )}
+            </div>
+          </>
+        </Detail>
       )}
     </div>
   );

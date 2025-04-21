@@ -7,6 +7,7 @@ import Sales from "./Component/Main/Sales/Sales"
 
 let routes = [
     {path:"/" , element:<Home/>},
+    {path:"/cms-react" , element:<Home/>},
     {path:"/Home" , element:<Home/>},
     {path:"/Products" , element:<Products/>},
     {path:"/Comments" , element:<Comments/>},
